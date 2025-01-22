@@ -18,7 +18,9 @@ const sampleAnime: AnimeData[] = [
       { name: "Eren Yeager", role: "Protagonist", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
       { name: "Mikasa Ackerman", role: "Main Character", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
       { name: "Armin Arlert", role: "Main Character", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
-      { name: "Levi Ackerman", role: "Supporting", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" }
+      { name: "Levi Ackerman", role: "Supporting", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
+      { name: "Erwin Smith", role: "Supporting", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
+      { name: "Historia Reiss", role: "Supporting", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" }
     ]
   },
   {
@@ -33,7 +35,44 @@ const sampleAnime: AnimeData[] = [
     characters: [
       { name: "Monkey D. Luffy", role: "Protagonist", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
       { name: "Roronoa Zoro", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
-      { name: "Nami", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" }
+      { name: "Nami", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
+      { name: "Sanji", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
+      { name: "Usopp", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
+      { name: "Nico Robin", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Demon Slayer",
+    image: "https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?w=800&auto=format&fit=crop",
+    type: "anime",
+    status: "Completed",
+    rating: 9.0,
+    releaseYear: 2019,
+    description: "A young man's journey to become a demon slayer after his family is slaughtered and his sister turned into a demon.",
+    characters: [
+      { name: "Tanjiro Kamado", role: "Protagonist", image: "https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?w=200&auto=format&fit=crop" },
+      { name: "Nezuko Kamado", role: "Main Character", image: "https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?w=200&auto=format&fit=crop" },
+      { name: "Zenitsu Agatsuma", role: "Main Character", image: "https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?w=200&auto=format&fit=crop" },
+      { name: "Inosuke Hashibira", role: "Main Character", image: "https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?w=200&auto=format&fit=crop" },
+      { name: "Giyu Tomioka", role: "Supporting", image: "https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?w=200&auto=format&fit=crop" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Jujutsu Kaisen",
+    image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?w=800&auto=format&fit=crop",
+    type: "manga",
+    status: "Ongoing",
+    rating: 9.1,
+    releaseYear: 2018,
+    description: "A high school student joins a secret organization of Jujutsu Sorcerers to fight against powerful Curses.",
+    characters: [
+      { name: "Yuji Itadori", role: "Protagonist", image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?w=200&auto=format&fit=crop" },
+      { name: "Megumi Fushiguro", role: "Main Character", image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?w=200&auto=format&fit=crop" },
+      { name: "Nobara Kugisaki", role: "Main Character", image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?w=200&auto=format&fit=crop" },
+      { name: "Satoru Gojo", role: "Supporting", image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?w=200&auto=format&fit=crop" },
+      { name: "Ryomen Sukuna", role: "Antagonist", image: "https://images.unsplash.com/photo-1614583225154-5fcdda07019e?w=200&auto=format&fit=crop" }
     ]
   }
 ];
