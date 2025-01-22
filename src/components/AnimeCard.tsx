@@ -1,13 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { AnimeData } from "@/types/anime";
 
-interface AnimeCardProps {
-  title: string;
-  image: string;
-  type: "anime" | "manga";
-  status: string;
-  rating?: number;
-}
+type AnimeCardProps = Omit<AnimeData, 'description' | 'characters' | 'releaseYear'>;
 
 export const AnimeCard = ({ title, image, type, status, rating }: AnimeCardProps) => {
   return (

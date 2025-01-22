@@ -1,45 +1,46 @@
 import { useState } from "react";
 import { SearchBar } from "@/components/SearchBar";
 import { AnimeCard } from "@/components/AnimeCard";
+import { AnimeDetail } from "@/components/AnimeDetail";
+import { AnimeData } from "@/types/anime";
 
-// Sample data - in a real app, this would come from an API
-const sampleAnime = [
+const sampleAnime: AnimeData[] = [
   {
     id: 1,
-    title: "Demon Slayer",
+    title: "Attack on Titan",
     image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop",
-    type: "anime" as const,
-    status: "airing",
+    type: "anime",
+    status: "Completed",
     rating: 9.2,
+    releaseYear: 2013,
+    description: "In a world where humanity lives inside cities surrounded by enormous walls due to the Titans, giant humanoid creatures who devour humans seemingly without reason.",
+    characters: [
+      { name: "Eren Yeager", role: "Protagonist", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
+      { name: "Mikasa Ackerman", role: "Main Character", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
+      { name: "Armin Arlert", role: "Main Character", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" },
+      { name: "Levi Ackerman", role: "Supporting", image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=200&auto=format&fit=crop" }
+    ]
   },
   {
     id: 2,
     title: "One Piece",
     image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=800&auto=format&fit=crop",
-    type: "manga" as const,
-    status: "ongoing",
+    type: "manga",
+    status: "Ongoing",
     rating: 9.5,
-  },
-  {
-    id: 3,
-    title: "Attack on Titan",
-    image: "https://images.unsplash.com/photo-1541562232579-512a21360020?w=800&auto=format&fit=crop",
-    type: "anime" as const,
-    status: "completed",
-    rating: 9.0,
-  },
-  {
-    id: 4,
-    title: "Jujutsu Kaisen",
-    image: "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=800&auto=format&fit=crop",
-    type: "manga" as const,
-    status: "ongoing",
-    rating: 8.9,
-  },
+    releaseYear: 1999,
+    description: "Follow Monkey D. Luffy and his pirate crew in their search for the ultimate treasure, the One Piece.",
+    characters: [
+      { name: "Monkey D. Luffy", role: "Protagonist", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
+      { name: "Roronoa Zoro", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" },
+      { name: "Nami", role: "Main Character", image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=200&auto=format&fit=crop" }
+    ]
+  }
 ];
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedAnime, setSelectedAnime] = useState<AnimeData | null>(null);
 
   const filteredAnime = sampleAnime.filter((anime) =>
     anime.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -58,11 +59,25 @@ const Index = () => {
           <SearchBar onSearch={setSearchQuery} />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredAnime.map((anime) => (
-            <AnimeCard key={anime.id} {...anime} />
-          ))}
-        </div>
+        {selectedAnime ? (
+          <div className="mb-8">
+            <button
+              onClick={() => setSelectedAnime(null)}
+              className="text-white mb-4 hover:text-gray-300 transition-colors"
+            >
+              ← Back to list
+            </button>
+            <AnimeDetail anime={selectedAnime} />
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredAnime.map((anime) => (
+              <div key={anime.id} onClick={() => setSelectedAnime(anime)}>
+                <AnimeCard {...anime} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
