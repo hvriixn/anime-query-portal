@@ -46,10 +46,10 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
+    <div className="min-h-screen bg-black">
       <div className="container py-8 px-4 mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Anime Explorer
           </h1>
           <p className="text-gray-400 mb-8">

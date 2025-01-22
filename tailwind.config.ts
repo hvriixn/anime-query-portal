@@ -25,19 +25,19 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#6D28D9",
+          DEFAULT: "#222222",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#60A5FA",
+          DEFAULT: "#333333",
           foreground: "#FFFFFF",
         },
         card: {
-          DEFAULT: "#1E293B",
+          DEFAULT: "#1A1A1A",
           foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#8B5CF6",
+          DEFAULT: "#444444",
           foreground: "#FFFFFF",
         },
       },
