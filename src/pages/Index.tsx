@@ -81,9 +81,14 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAnime, setSelectedAnime] = useState<AnimeData | null>(null);
 
-  const filteredAnime = sampleAnime.filter((anime) =>
-    anime.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredAnime = sampleAnime.filter((anime) => {
+    const titleMatch = anime.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const characterMatch = anime.characters.some(character => 
+      character.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      character.role.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    return titleMatch || characterMatch;
+  });
 
   return (
     <div className="min-h-screen bg-black">
@@ -93,7 +98,7 @@ const Index = () => {
             Anime Explorer
           </h1>
           <p className="text-gray-400 mb-8">
-            Discover your next favorite anime or manga
+            Search anime, manga, and characters
           </p>
           <SearchBar onSearch={setSearchQuery} />
         </div>

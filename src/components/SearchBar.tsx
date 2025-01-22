@@ -11,7 +11,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
       <Input
         className="w-full pl-10 bg-gray-900 border-gray-700 text-white focus:border-gray-500"
-        placeholder="Search for anime, manga, or characters..."
+        placeholder="Search by anime title, character name, or role..."
         onChange={(e) => onSearch(e.target.value)}
       />
     </div>
